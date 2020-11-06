@@ -3,6 +3,7 @@ package com.example.meetingapp.fragments.profile_stepper;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -97,7 +99,27 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
     private String sex;
 
     private Uri mCropImageUri;
-    private String currentPhotoPath;
+
+    private class CompressBitmap extends AsyncTask<Bitmap, Integer, byte[]> {
+
+        @Override
+        protected byte[] doInBackground(Bitmap... bitmaps) {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmaps[0].compress(Bitmap.CompressFormat.PNG, 100, stream);
+            return stream.toByteArray();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(byte[] bytes) {
+            super.onPostExecute(bytes);
+            iUserProfileManager.savePhoto(bytes);
+        }
+    }
 
     public static UserBasicInformationStepperFragmentFragment newInstance() {
         return new UserBasicInformationStepperFragmentFragment();
@@ -161,7 +183,7 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
     private String getRealPathFromURI(Uri contentURI) {
         String result;
         Cursor cursor = getContext().getContentResolver().query(contentURI, null, null, null, null);
-        if (cursor == null) { // Source is Dropbox or other similar local file path
+        if (cursor == null) {
             result = contentURI.getPath();
         } else {
             cursor.moveToFirst();
@@ -218,11 +240,8 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
         iUserProfileManager.saveSex(sex);
         upload(mCropImageUri);
 
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
-
-        iUserProfileManager.savePhoto(byteArray);
+        CompressBitmap compressBitmap = new CompressBitmap();
+        compressBitmap.execute(bitmap);
 
         callback.goToNextStep();
     }
@@ -265,13 +284,13 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 requireActivity(),
-                R.style.DialogTheme,
+                AlertDialog.THEME_HOLO_LIGHT,
                 this,
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)
         );
-        datePickerDialog.getDatePicker();
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()-441797328000L);
         datePickerDialog.show();
     }
 
