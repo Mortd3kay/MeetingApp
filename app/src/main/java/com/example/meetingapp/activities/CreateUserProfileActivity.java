@@ -1,5 +1,6 @@
 package com.example.meetingapp.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class CreateUserProfileActivity extends AppCompatActivity implements IUse
     private static final String EDUCATION = "education";
     private static final String JOB = "job";
     private static final String CATEGORIES = "categories";
+    private static final String URI = "uri";
 
     private StepperLayout stepperLayout;
 

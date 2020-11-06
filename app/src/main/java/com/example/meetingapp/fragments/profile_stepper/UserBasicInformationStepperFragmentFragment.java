@@ -106,7 +106,13 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
         protected byte[] doInBackground(Bitmap... bitmaps) {
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmaps[0].compress(Bitmap.CompressFormat.PNG, 100, stream);
-            return stream.toByteArray();
+            byte[] bytes = stream.toByteArray();
+            try {
+                stream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return bytes;
         }
 
         @Override
@@ -177,6 +183,7 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
     @OnClick(R.id.image_profile)
     void openImage() {
         verifyStoragePermissions(requireActivity());
+        iUserProfileManager.savePhoto(null);
         CropImage.startPickImageActivity(requireContext(), this);
     }
 
@@ -210,6 +217,11 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
                 layoutAvatarMask.setVisibility(View.GONE);
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), mCropImageUri);
+                    //upload(mCropImageUri);
+
+                    CompressBitmap compressBitmap = new CompressBitmap();
+                    compressBitmap.execute(bitmap);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -238,10 +250,6 @@ public class UserBasicInformationStepperFragmentFragment extends Fragment implem
         String date = Objects.requireNonNull(textBirthDate.getText()).toString();
         iUserProfileManager.saveBirthDate(date);
         iUserProfileManager.saveSex(sex);
-        upload(mCropImageUri);
-
-        CompressBitmap compressBitmap = new CompressBitmap();
-        compressBitmap.execute(bitmap);
 
         callback.goToNextStep();
     }
