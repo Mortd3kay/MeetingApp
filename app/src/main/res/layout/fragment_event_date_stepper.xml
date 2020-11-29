@@ -47,7 +47,8 @@
         android:layout_below="@id/radio_group"
         android:layout_marginTop="8dp"
         android:focusable="false"
-        android:hint="@string/date" />
+        android:hint="@string/date"
+        android:inputType="date"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/text_time"
@@ -56,7 +57,9 @@
         android:layout_below="@id/text_date"
         android:layout_marginTop="8dp"
         android:focusable="false"
-        android:hint="@string/time_optional" />
+        android:hint="@string/time_optional"
+        android:inputType="time"/>
+        android:hint="Время" />
 
 </RelativeLayout>
 

@@ -14,11 +14,19 @@
         android:elevation="5dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/creator_avatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/member_circle" />
+
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/creator_name"
             style="@style/Toolbar.TitleText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLines="1" />
 
     </androidx.appcompat.widget.Toolbar>
 

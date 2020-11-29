@@ -21,4 +21,8 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class androidx.appcompat.widget.** { *; }
-
+-keepattributes LineNumberTable,SourceFile
+-dontwarn java.lang.instrument.ClassFileTransformer
+-dontwarn sun.misc.SignalHandler
+-dontwarn java.lang.instrument.Instrumentation
+-dontwarn sun.misc.Signal

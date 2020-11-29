@@ -42,6 +42,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/clear_filters"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -93,14 +94,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:chipSpacing="8dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/colorSecondary" />
+                app:chipSpacing="8dp"
+                app:chipSpacingVertical="-4dp" />
 
             <View
                 android:layout_width="match_parent"
@@ -117,10 +112,10 @@
                 android:textStyle="bold" />
 
             <com.appyvet.materialrangebar.RangeBar
+                android:id="@+id/seek_bar_distance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:mrb_barWeight="2dp"
-                android:id="@+id/seek_bar_distance"
                 app:mrb_connectingLineColor="@color/colorPrimary"
                 app:mrb_connectingLineWeight="4dp"
                 app:mrb_pinColor="@color/colorPrimary"
@@ -133,7 +128,7 @@
                 app:mrb_thumbBoundaryColor="@color/colorPrimary"
                 app:mrb_thumbColor="@color/colorPrimary"
                 app:mrb_thumbSize="12dp"
-                app:mrb_tickEnd="100"
+                app:mrb_tickEnd="99"
                 app:mrb_tickHeight="0dp"
                 app:mrb_tickInterval="1"
                 app:mrb_tickLabelSize="4sp"
@@ -162,11 +157,11 @@
                 app:mrb_thumbBoundaryColor="@color/colorPrimary"
                 app:mrb_thumbColor="@color/colorPrimary"
                 app:mrb_thumbSize="12dp"
-                app:mrb_tickEnd="65"
+                app:mrb_tickEnd="35"
                 app:mrb_tickHeight="0dp"
                 app:mrb_tickInterval="1"
                 app:mrb_tickLabelSize="4sp"
-                app:mrb_tickStart="17" />
+                app:mrb_tickStart="16" />
 
             <View
                 android:layout_width="match_parent"
@@ -189,14 +184,15 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/layout_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="48dp"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
+                    android:orientation="vertical">
 
                     <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkbox_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -213,15 +209,15 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="48dp"
-
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
+                    android:orientation="vertical">
 
                     <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkbox_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -238,18 +234,19 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_any"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
+                    android:orientation="vertical">
 
                     <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkbox_any"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:buttonTint="@color/colorPrimary"
-                        android:checked="false"
+                        android:checked="true"
                         android:minWidth="0dp"
                         android:minHeight="0dp" />
 
@@ -257,7 +254,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Любой другой" />
+                        android:text="Кто-то еще" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

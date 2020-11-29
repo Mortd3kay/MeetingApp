@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:782236131176:android:b9e958fa16597c417b80dd",
         "android_client_info": {
-          "package_name": "com.example.meetingapp"
+          "package_name": "com.lazysecs.meetingapp"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "782236131176-ghfq6qjgk31a6vtu8q7p3p8bpbm8ounc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.meetingapp",
+            "package_name": "com.lazysecs.meetingapp",
             "certificate_hash": "9c9d3f69cb69f6fd2db0a5e328b32f883c5c8df5"
           }
         },

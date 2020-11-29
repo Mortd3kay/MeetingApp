@@ -12,14 +12,17 @@
         style="@style/H4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="Оставьте фидбэк"
+        android:gravity="center_horizontal"
         android:textColor="@color/colorPrimary" />
 
     <EditText
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/boarder"
+        android:background="@drawable/boarderless"
         android:gravity="top|left"
         android:hint="Пожелания, предложения, замечания"
         android:importantForAutofill="no"
@@ -28,7 +31,10 @@
         android:minLines="16"
         android:padding="8dp"
         android:scrollbars="vertical"
-        android:textSize="16sp"
+        android:textColor="@color/ms_black"
+        android:textColorHint="@color/colorSecondaryDark"
+        android:textCursorDrawable="@drawable/cursor_color_black"
+        android:textSize="18sp"
         tools:ignore="RtlHardcoded" />
 
     <LinearLayout
@@ -39,6 +45,7 @@
         android:gravity="bottom|center_horizontal">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ОТПРАВИТЬ" />

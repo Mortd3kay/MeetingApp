@@ -1,35 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:paddingStart="8dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image_profile"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/ic_icons8_avatar" />
+    <LinearLayout
+        android:id="@+id/left_block"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/read_point"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/red_point"
+            android:visibility="invisible"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_profile"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_icons8_avatar" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_toEndOf="@id/image_profile"
+        android:layout_toEndOf="@id/left_block"
+        android:gravity="center_vertical"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/text_event_description"
+            style="@style/Body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:maxLines="1"
+            android:text="Alex ALex" />
 
-            <TextView
-                android:id="@+id/notification_username"
-                style="@style/Body"
-                android:textStyle="normal"
-                android:text="Undefined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/notification_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingEnd="4dp"
+            android:text="Alex ALex"
+            android:textColor="@color/colorSecondaryDark"
+            android:textStyle="normal" />
 
         <LinearLayout
             android:id="@+id/decision_buttons"

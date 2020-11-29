@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingStart="32dp"
@@ -15,23 +17,25 @@
         android:id="@+id/layout_logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:background="@drawable/ic_wolf"
+            android:layout_width="196dp"
+            android:layout_height="196dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_logo"
             tools:ignore="ContentDescription" />
 
         <TextView
+            android:id="@+id/text_welcome"
             style="@style/H5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
             android:text="Welcome to WALK"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorSecondary" />
     </LinearLayout>
 
 
@@ -40,14 +44,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:visibility="gone"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:inputType="textEmailAddress"
             android:hint="Email" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -64,8 +69,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="right"
+            android:id="@+id/forget_password"
             android:text="Забыли пароль?"
-            android:textColor="@color/colorSecondaryDark" />
+            android:textColor="@color/colorSecondaryDark"
+            tools:ignore="RtlHardcoded" />
 
         <Button
             android:id="@+id/button_login"

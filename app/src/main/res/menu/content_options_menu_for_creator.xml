@@ -10,10 +10,10 @@
 
     <item
         android:id="@+id/menu_stop"
-        android:title="Приостановить" />
+        android:title="Завершить" />
 
     <item
-        android:id="@+id/menu_cancel"
-        android:title="Завершить" />
+        android:id="@+id/menu_delete"
+        android:title="Удалить" />
 
 </menu>

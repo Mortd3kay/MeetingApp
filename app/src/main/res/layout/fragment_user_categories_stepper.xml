@@ -4,20 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
     tools:context=".fragments.profile_stepper.UserCategoriesStepperFragment">
 
     <TextView
         android:id="@+id/header_h4"
         style="@style/H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/chips_counter"
+        style="@style/Body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Выбрано 0 из 15 возможных интересов"
         android:textColor="@color/colorPrimary" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:padding="16dp" />
 </LinearLayout>

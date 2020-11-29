@@ -16,6 +16,18 @@
         android:visibility="gone"
         tools:ignore="RtlHardcoded" />
 
+    <TextView
+        android:id="@+id/unread_messages"
+        style="@style/Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Новые сообщения"
+        android:textAlignment="center"
+        android:textColor="@color/colorSecondaryDark"
+        android:visibility="gone"
+        tools:ignore="RtlHardcoded" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:inputType="textPersonName"
         android:hint="В каком городе вы живете?" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
@@ -26,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:inputType="textPersonName"
         android:hint="Ваше образование?" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
@@ -33,5 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:inputType="textPersonName"
         android:hint="Где вы работаете?" />
 </LinearLayout>

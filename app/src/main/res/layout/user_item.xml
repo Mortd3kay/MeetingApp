@@ -4,29 +4,60 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:paddingStart="8dp"
+    tools:ignore="RtlSymmetry">
+
+    <ImageButton
+        android:id="@+id/read_point"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/red_point"
+        android:visibility="invisible"
+        tools:ignore="ContentDescription,RtlHardcoded" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_profile"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/ic_icons8_avatar" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/text_first_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Undefined"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:ignore="RtlHardcoded" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Undefined"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/text_last_message_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/text_first_name"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:text="04:20"
+                android:textColor="@color/colorSecondaryDark"
+                android:textSize="14sp"
+                tools:ignore="RtlHardcoded" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/text_event_description_brief"
@@ -38,5 +69,40 @@
             android:text="Undefined"
             android:textSize="14sp"
             tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/last_message_from_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Сообщений пока нет :("
+                android:textColor="@color/colorSecondaryDark"
+                android:textSize="14sp"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/text_last_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="14sp"
+                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorSecondary" />
     </LinearLayout>
 </LinearLayout>

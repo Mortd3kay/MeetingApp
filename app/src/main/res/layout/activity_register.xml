@@ -26,7 +26,8 @@
         android:layout_marginTop="8dp"
         android:hint="Email"
         android:textSize="16sp"
-        app:met_floatingLabel="normal" />
+        app:met_floatingLabel="normal"
+        android:inputType="textEmailAddress"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/text_first_name"
@@ -35,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="Имя"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:inputType="textPersonName"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/text_last_name"
@@ -43,7 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="Фамилия"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:inputType="textPersonName"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/text_password"
@@ -62,4 +65,15 @@
         android:layout_marginTop="8dp"
         android:text="Создать аккаунт"
         android:textColor="@color/colorSecondaryLight" />
+
+
+    <TextView
+        android:id="@+id/text_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorSecondaryDark"
+        android:textSize="12sp" />
+
 </LinearLayout>

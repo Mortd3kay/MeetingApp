@@ -11,6 +11,7 @@
         android:id="@+id/text_ticket_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
         android:hint="Название мероприятия" />
 
     <com.rengwuxian.materialedittext.MaterialEditText

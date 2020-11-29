@@ -43,136 +43,21 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.core.widget.NestedScrollView
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Причина жалобы"
+        android:textColor="@color/colorSecondaryDark" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp">
+        android:clipToPadding="false"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:scrollbars="vertical" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Причина жалобы"
-                android:textColor="@color/colorSecondaryDark" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Спам"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Спекуляция"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Оскорбления"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Материалы для взрослых"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Детская порнография"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Пропаганда наркотиков"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Продажа оружия"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Насилие"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Призыв к травле"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                style="@style/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="Призыв к суициду"
-                tools:ignore="UnusedAttribute" />
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

@@ -91,7 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:chipSpacing="8dp" />
+            app:chipSpacing="8dp"
+            app:chipSpacingVertical="-4dp" />
 
         <View
             android:layout_width="match_parent"
@@ -119,6 +120,7 @@
                 android:id="@+id/text_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Пусто :("
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -142,6 +144,7 @@
                 android:id="@+id/text_education"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Пусто :("
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -165,6 +168,7 @@
                 android:id="@+id/text_job"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Пусто :("
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

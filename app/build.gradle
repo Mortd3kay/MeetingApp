@@ -5,17 +5,19 @@ apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    ndkVersion "22.0.6917172"
     defaultConfig {
-        applicationId "com.example.meetingapp"
+        applicationId "com.lazysecs.meetingapp"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 1
+        versionCode 10
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -93,10 +95,6 @@ dependencies {
 
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 
-    implementation 'com.amazonaws:aws-android-sdk-core:2.16.12'
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.16.12'
-    implementation 'com.amazonaws:aws-android-sdk-s3:2.16.12'
-    implementation 'com.amazonaws:aws-android-sdk-ddb:2.16.12'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.vipulasri:ticketview:1.0.7'
     implementation 'com.fasterxml.jackson.core:com.springsource.com.fasterxml.jackson.core.jackson-annotations:2.0.2'
@@ -108,8 +106,10 @@ dependencies {
 
     implementation 'com.github.GoodieBag:PinView:1.4'
 
-    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 }
+
+android.buildTypes.release.ndk.debugSymbolLevel = 'FULL'
 
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->

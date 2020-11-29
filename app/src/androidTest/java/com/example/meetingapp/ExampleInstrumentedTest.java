@@ -1,4 +1,4 @@
-package com.example.meetingapp;
+package com.lazysecs.meetingapp;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.meetingapp", appContext.getPackageName());
+        assertEquals("com.lazysecs.walk", appContext.getPackageName());
     }
 }

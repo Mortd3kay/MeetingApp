@@ -4,7 +4,7 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=9C:9D:3F:69:CB:69:F6:FD:2D:B0:A5:E3:28:B3:2F:88:3C:5C:8D:F5%3Bcom.example.meetingapp.activities
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=9C:9D:3F:69:CB:69:F6:FD:2D:B0:A5:E3:28:B3:2F:88:3C:5C:8D:F5%3Bcom.lazysecs.meetingapp.activities
 
     You can also add your credentials to an existing key, using these values:
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.EventChatFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/message_box"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        tools:ignore="UnknownIdInLayout" />
+
+    <ImageView
+        android:id="@+id/scroll_down_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/colorSecondary"
+        android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+        android:tint="@color/colorPrimary"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/message_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorSecondary"
+        android:paddingLeft="16dp"
+        android:paddingTop="12dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="12dp">
+
+        <EditText
+            android:id="@+id/text_message"
+            style="@style/MyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/button_send"
+            android:background="@null"
+            android:focusedByDefault="true"
+            android:hint="@string/write_message"
+            android:importantForAutofill="no"
+
+            android:inputType="textCapSentences|textMultiLine|textFilter"
+            android:maxLines="8"
+            android:textColor="@color/ms_black"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/button_send"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/ic_action_name"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+    </RelativeLayout>
+</RelativeLayout>

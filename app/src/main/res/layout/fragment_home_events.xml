@@ -7,6 +7,23 @@
     android:background="@color/colorSecondary"
     tools:context=".fragments.HomeEventsFragment">
 
+    <RelativeLayout
+        android:id="@+id/progressbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_marginTop="32dp"
+            android:id="@+id/progressbar_downloading"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:theme="@style/CustomDialogTheme" />
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
