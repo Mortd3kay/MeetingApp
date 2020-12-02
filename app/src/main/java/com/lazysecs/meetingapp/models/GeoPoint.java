@@ -3,6 +3,10 @@ package com.lazysecs.meetingapp.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class GeoPoint implements Parcelable {
     public static final Parcelable.Creator<GeoPoint> CREATOR = new Parcelable.Creator<GeoPoint>() {
         public GeoPoint createFromParcel(Parcel in) {
@@ -13,6 +17,8 @@ public class GeoPoint implements Parcelable {
             return new GeoPoint[size];
         }
     };
+    @PrimaryKey(autoGenerate = true)
+    private String id;
     private double latitude;
     private double longitude;
     private String address;

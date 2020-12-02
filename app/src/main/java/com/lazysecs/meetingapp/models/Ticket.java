@@ -7,7 +7,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
+@Entity
 public class Ticket implements Parcelable{
     public static final Parcelable.Creator<Ticket> CREATOR = new Parcelable.Creator<Ticket>() {
         public Ticket createFromParcel(Parcel in) {
@@ -18,17 +22,21 @@ public class Ticket implements Parcelable{
             return new Ticket[size];
         }
     };
+    @PrimaryKey(autoGenerate = false)
     private int id;
     private String name;
+    @Ignore
     @SerializedName("geo_point")
     private GeoPoint geoPoint;
     private int price;
+    @Ignore
     private UserProfile creator;
     private String created;
     private String date;
     private String time;
     private String description;
     private boolean sold;
+    @Ignore
     private List<Category> categories;
 
     public Ticket(int id, String name, GeoPoint geoPoint, int price, UserProfile creator, String created, String date, String time, String description, boolean sold, List<Category> categories) {

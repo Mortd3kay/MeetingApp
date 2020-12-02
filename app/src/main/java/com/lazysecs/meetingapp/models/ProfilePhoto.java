@@ -3,6 +3,10 @@ package com.lazysecs.meetingapp.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class ProfilePhoto implements Parcelable {
     public static final Creator<ProfilePhoto> CREATOR = new Creator<ProfilePhoto>() {
         @Override
@@ -15,6 +19,7 @@ public class ProfilePhoto implements Parcelable {
             return new ProfilePhoto[size];
         }
     };
+    @PrimaryKey(autoGenerate = false)
     private String photo;
 
     public ProfilePhoto(String photo) {

@@ -2,7 +2,12 @@ package com.lazysecs.meetingapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class ShortChat {
+    @PrimaryKey
     @SerializedName("content_id")
     private int contentId;
     @SerializedName("last_message_id")

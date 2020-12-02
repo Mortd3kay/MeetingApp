@@ -2,14 +2,19 @@ package com.lazysecs.meetingapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ShortRequest {
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
+public class ShortRequest {
+    @PrimaryKey
     @SerializedName("id")
     private int id;
-
+    @ColumnInfo(name = "from_user")
     @SerializedName("from_user")
     private int fromUser;
-
+    @ColumnInfo(name = "to_user")
     @SerializedName("to_user")
     private int toUser;
 

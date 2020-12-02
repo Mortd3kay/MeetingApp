@@ -5,11 +5,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+@Entity
 public class Event implements Parcelable {
     public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
         @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -21,16 +25,21 @@ public class Event implements Parcelable {
             return new Event[size];
         }
     };
+    @Ignore
     @SerializedName("geo_point")
     private GeoPoint geoPoint;
+    @PrimaryKey
     private int id;
+    @Ignore
     private UserProfile creator;
     private String name;
     private String description;
     private boolean requested;
     private String date;
     private String time;
+    @Ignore
     private List<Category> categories;
+    @Ignore
     private List<UserProfile> members;
     private boolean ended;
 

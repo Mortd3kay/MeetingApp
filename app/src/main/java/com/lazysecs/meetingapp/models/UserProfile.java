@@ -25,7 +25,7 @@ public class UserProfile implements Parcelable {
             return new UserProfile[size];
         }
     };
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = false)
     @SerializedName("id")
     private int id;
     @SerializedName("firebase_uid")
@@ -48,6 +48,7 @@ public class UserProfile implements Parcelable {
     private String education;
     @SerializedName("job")
     private String job;
+    @Ignore
     @SerializedName("photo")
     private ProfilePhoto photo;
     @SerializedName("sex")

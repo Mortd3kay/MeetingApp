@@ -3,6 +3,10 @@ package com.lazysecs.meetingapp.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Category implements Parcelable {
     public static final Parcelable.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {
         public Category createFromParcel(Parcel in) {
@@ -13,6 +17,7 @@ public class Category implements Parcelable {
             return new Category[size];
         }
     };
+    @PrimaryKey
     private String name;
 
     private Category(Parcel in) {
