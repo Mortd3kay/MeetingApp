@@ -107,6 +107,19 @@ dependencies {
     implementation 'com.github.GoodieBag:PinView:1.4'
 
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    def room_version = "2.2.5"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    def lifecycle_version = "2.2.0"
+    def arch_version = "2.1.0"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
 }
 
 android.buildTypes.release.ndk.debugSymbolLevel = 'FULL'

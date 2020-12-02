@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+
 public class Ticket implements Parcelable{
     public static final Parcelable.Creator<Ticket> CREATOR = new Parcelable.Creator<Ticket>() {
         public Ticket createFromParcel(Parcel in) {

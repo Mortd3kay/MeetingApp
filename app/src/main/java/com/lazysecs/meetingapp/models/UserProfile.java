@@ -7,6 +7,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "user")
 public class UserProfile implements Parcelable {
 
     public static final Creator<UserProfile> CREATOR = new Creator<UserProfile>() {
@@ -20,6 +25,7 @@ public class UserProfile implements Parcelable {
             return new UserProfile[size];
         }
     };
+    @PrimaryKey
     @SerializedName("id")
     private int id;
     @SerializedName("firebase_uid")
@@ -46,15 +52,17 @@ public class UserProfile implements Parcelable {
     private ProfilePhoto photo;
     @SerializedName("sex")
     private String sex;
+    @Ignore
     @SerializedName("categories")
     private List<Category> categories;
     @SerializedName("is_confirmed")
     private Boolean confirmed;
     @SerializedName("is_filled")
     private Boolean filled;
-
+    @Ignore
     @SerializedName("chats")
     private List<ShortChat> shortChats;
+    @Ignore
     @SerializedName("requests")
     private List<ShortRequest> shortRequests;
     @SerializedName("new_messages_count")
